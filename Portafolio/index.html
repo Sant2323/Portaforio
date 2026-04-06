@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -12,26 +13,107 @@
     <body>
         <header>
             <nav>
-                <ul class="navbar">
-                    <li><a href="#sobre-mi">Sobre mí</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
+                <nav id="nav">
+
+                    <!-- Botón modo oscuro / claro -->
+                    <button class="btn btn-icon" id="themeBtn" aria-label="Cambiar tema">
+                        <img src="sol.png" alt="Modo claro" class="icon-sun" />
+                        <img src="luna.png" alt="Modo oscuro" class="icon-moon" />
+                    </button>
+
+                    <div class="sep"></div>
+
+                    <!-- Links principales internos -->
+                    <a class="btn active" href="#sobre-mi">Sobre mí</a>
+                    <a class="btn" href="#habilidades">Habilidades</a>
+                    <a class="btn" href="#experiencia">Experiencia</a>
+                    <a class="btn" href="#proyectos">Proyectos</a>
+
+                    <div class="sep"></div>
+
+                    <!-- Botón Contacto externo -->
+                    <a class="btn btn-contact" href="mailto:tu@email.com">
+                        Contacto
+                    </a>
+
+                    <div class="sep"></div>
+
+                    <!-- Redes sociales -->
+                    <a class="btn btn-icon" href="#" target="_blank" rel="noopener" aria-label="GitHub">
+                        GitHub
+                    </a>
+                    <a class="btn btn-icon" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        LinkedIn
+                    </a>
+
+                </nav>
             </nav>
         </header>
 
+    <!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio Profesional</title>
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <nav id="nav">
+
+                    <!-- Botón modo oscuro / claro -->
+                    <button class="btn btn-icon" id="themeBtn" aria-label="Cambiar tema">
+                        <img src="sol.png" alt="Modo claro" class="icon-sun" />
+                        <img src="luna.png" alt="Modo oscuro" class="icon-moon" />
+                    </button>
+
+                    <div class="sep"></div>
+
+                    <!-- Links principales internos -->
+                    <a class="btn active" href="#sobre-mi">Sobre mí</a>
+                    <a class="btn" href="#habilidades">Habilidades</a>
+                    <a class="btn" href="#experiencia">Experiencia</a>
+                    <a class="btn" href="#proyectos">Proyectos</a>
+
+                    <div class="sep"></div>
+
+                    <!-- Botón Contacto externo -->
+                    <a class="btn btn-contact" href="mailto:tu@email.com">
+                        Contacto
+                    </a>
+
+                    <div class="sep"></div>
+
+                    <!-- Redes sociales -->
+                    <a class="btn btn-icon" href="#" target="_blank" rel="noopener" aria-label="GitHub">
+                        GitHub
+                    </a>
+                    <a class="btn btn-icon" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        LinkedIn
+                    </a>
+
+                </nav>
+            </nav>
+        </header>
+        
+        <div class="container">
         <main>
             <!-- Sección Sobre mí -->
             <section id="sobre-mi">
-                <h1>Nombre del Desarrollador</h1>
-                <h2>Desarrollador Web Front-End</h2>
-                <img src="imagenes/foto-perfil.png" alt="Foto de perfil">
-                <p>Breve descripción profesional del desarrollador ficticio.</p>
+                <div class="sobre-mi-content">
+                    <h1>Nombre del Desarrollador</h1>
+                    <h2>Desarrollador Web Front-End</h2>
+                    <img src="imagenes/foto-perfil.png" alt="Foto de perfil">
+                    <p>Breve descripción profesional del desarrollador ficticio.</p>
+                </div>
             </section>
 
-            <!-- Sección Habilidadesñññ -->
+            <!-- Sección Habilidades -->
             <section id="habilidades">
                 <h2>Habilidades y Herramientas</h2>
                 <ul>
@@ -90,7 +172,7 @@
                 </div>
             </section>
         </main>
-
+        </div>
         <footer>
             <p>&copy; 2026 Portfolio Profesional</p>
         </footer>

@@ -9,50 +9,179 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #a7a7a7;
 }
 
-/* Navegación */
+.container {
+  max-width: 950px;/* ancho máximo del contenido */
+  max-height: 100%;   /*hacer que el contenido ocupe toda la altura disponible*/
+  margin: 80px auto 40px auto;  /* centrado horizontal y espacio arriba/abajo */
+  padding: 20px;                /* espacio interno */
+  border: 3px solid #6ee7b7;    /* color del borde */
+  border-radius: 12px;          /* bordes redondeados */
+  background-color: #474749;    /* color de fondo del contenido */
+  color: #e2e4ed;               /* color del texto */
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); /* sombra para destacar el contenido */
+}
+
+
+/* Barra de navegación fija */
 nav {
-    background-color: #333;
-    padding: 1rem;
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(20,21,28,0.85);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 999px;
+  padding: 6px 10px;
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: 0 6px 30px rgba(0,0,0,.4);
+  transition: box-shadow .25s, top .25s;
 }
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+/* Efecto al hacer scroll */
+nav.scrolled {
+  top: 8px;
+  box-shadow: 0 8px 36px rgba(0,0,0,.55);
 }
 
-.navbar li {
-    margin: 0 1rem;
+/* Botones y links */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 13px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: #6b6f83;
+  font-family: 'Syne', sans-serif;
+  font-size: .8rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .15s, background .15s;
 }
 
-.navbar a {
-    color: #fff;
-    text-decoration: none;
+.btn:hover, .btn.active {
+  color: #e2e4ed;
+  background: rgba(128,128,128,.1);
 }
 
-.navbar a:hover {
-    text-decoration: underline;
+.btn.active {
+  color: #6ee7b7;
+}
+
+/* Botón modo oscuro / claro */
+.btn-icon {
+  width: 64px;
+  height: 34px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Imágenes del tema */
+.btn-icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  transition: opacity .2s, transform .25s;
+}
+
+/* Mostrar solo el ícono correspondiente según el tema */
+[data-theme="dark"]  .icon-moon { opacity:1; transform: scale(1); }
+[data-theme="dark"]  .icon-sun  { opacity:0; transform: scale(0.5); }
+
+[data-theme="light"] .icon-sun  { opacity:1; transform: scale(1); }
+[data-theme="light"] .icon-moon { opacity:0; transform: scale(0.5); }
+
+/* Botón Contacto */
+.btn-contact {
+  background: #6ee7b7;
+  color: #0b0c10;
+  font-weight: 700;
+  transition: filter .15s, transform .15s;
+}
+
+.btn-contact:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Separador entre botones */
+.sep {
+  width: 1px;
+  height: 19px;
+  background: rgba(255,255,255,0.08);
+  flex-shrink: 0;
+  margin: 0 2px;
+}
+
+/* Espacio para contenido debajo de nav */
+body {
+    padding-top: 80px;
 }
 
 /* Secciones */
 section {
-    width: 100%;          /* Ocupa todo el ancho disponible */
-    min-height: 100vh;    /* Opcional: ocupa toda la altura de la pantalla */
+    width: 100%;
+    min-height: 100vh;
     padding: 2rem;
     max-width: 900px;
-    margin: auto;
+    margin: 0 auto;
+    scroll-margin-top: 80px; /* Para que el scroll no tape contenido */
 }
 
-/* Sobre mí */
+/* Contenedor y centrado */
+#sobre-mi {
+  text-align: center;         /* Centra todos los elementos dentro de la sección */
+  padding: 40px 20px;         /* Espacio arriba y abajo */
+}
+
+/* Nombre y especialidad */
+#sobre-mi h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#sobre-mi h2 {
+  font-size: 1.5rem;
+  color: #6b6f83;             /* color más suave */
+  margin-bottom: 1rem;
+}
+
+/* Imagen centrada y redondeada */
 #sobre-mi img {
-    max-width: 200px;
-    border-radius: 50%;
-    display: block;
-    margin: 1rem auto;
-    border: 3px solid #333;
+  max-width: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1.5rem auto; /* centrada y espacio abajo */
+  border: 3px solid #6ee7b7;  /* borde visible */
+}
+
+/* Descripción centrada */
+#sobre-mi p {
+  max-width: 600px;           /* ancho máximo para mejor lectura */
+  margin: 0 auto;             /* centrado horizontal */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e2e4ed;
 }
 
 /* Habilidades */
