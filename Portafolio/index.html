@@ -1,180 +1,244 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio Profesional</title>
-        <link rel="stylesheet" href="css/style.css">
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Profesional</title>
+    <link rel="stylesheet" href="css/style.css">
 
-    <body>
-        <header>
-            <nav>
-                <nav id="nav">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
 
-                    <!-- Botón modo oscuro / claro -->
-                    <button class="btn btn-icon" id="themeBtn" aria-label="Cambiar tema">
-                        <img src="sol.png" alt="Modo claro" class="icon-sun" />
-                        <img src="luna.png" alt="Modo oscuro" class="icon-moon" />
-                    </button>
+<body>
 
-                    <div class="sep"></div>
+<header>
+    <!-- SOLO UN NAV -->
+    <nav id="nav">
 
-                    <!-- Links principales internos -->
-                    <a class="btn active" href="#sobre-mi">Sobre mí</a>
-                    <a class="btn" href="#habilidades">Habilidades</a>
-                    <a class="btn" href="#experiencia">Experiencia</a>
-                    <a class="btn" href="#proyectos">Proyectos</a>
+        <!-- Botón modo oscuro / claro -->
+        <button class="btn btn-icon" id="themeBtn" aria-label="Cambiar tema">
+            <img src="sol.png" alt="Modo claro" class="icon-sun" />
+            <img src="luna.png" alt="Modo oscuro" class="icon-moon" />
+        </button>
 
-                    <div class="sep"></div>
+        <div class="sep"></div>
 
-                    <!-- Botón Contacto externo -->
-                    <a class="btn btn-contact" href="mailto:tu@email.com">
-                        Contacto
-                    </a>
+        <!-- Links -->
+        <a class="btn active" href="#sobre-mi">Sobre mí</a>
+        <a class="btn" href="#habilidades">Habilidades</a>
+        <a class="btn" href="#experiencia">Experiencia</a>
+        <a class="btn" href="#proyectos">Proyectos</a>
 
-                    <div class="sep"></div>
+        <div class="sep"></div>
 
-                    <!-- Redes sociales -->
-                    <a class="btn btn-icon" href="#" target="_blank" rel="noopener" aria-label="GitHub">
-                        GitHub
-                    </a>
-                    <a class="btn btn-icon" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        LinkedIn
-                    </a>
+        <!-- Contacto -->
+        <a class="btn btn-contact" href="mailto:tu@email.com">
+            Contacto
+        </a>
 
-                </nav>
-            </nav>
-        </header>
+        <div class="sep"></div>
 
-    <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio Profesional</title>
-        <link rel="stylesheet" href="css/style.css">
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    </head>
+        <!-- Redes -->
+        <a class="btn btn-icon" href="https://github.com/" target="_blank">GitHub</a>
+        <a class="btn btn-icon" href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
 
-    <body>
-        <header>
-            <nav>
-                <nav id="nav">
+    </nav>
+</header>
 
-                    <!-- Botón modo oscuro / claro -->
-                    <button class="btn btn-icon" id="themeBtn" aria-label="Cambiar tema">
-                        <img src="sol.png" alt="Modo claro" class="icon-sun" />
-                        <img src="luna.png" alt="Modo oscuro" class="icon-moon" />
-                    </button>
+<!-- CONTENEDOR -->
+<div class="container">
+<main>
 
-                    <div class="sep"></div>
-
-                    <!-- Links principales internos -->
-                    <a class="btn active" href="#sobre-mi">Sobre mí</a>
-                    <a class="btn" href="#habilidades">Habilidades</a>
-                    <a class="btn" href="#experiencia">Experiencia</a>
-                    <a class="btn" href="#proyectos">Proyectos</a>
-
-                    <div class="sep"></div>
-
-                    <!-- Botón Contacto externo -->
-                    <a class="btn btn-contact" href="mailto:tu@email.com">
-                        Contacto
-                    </a>
-
-                    <div class="sep"></div>
-
-                    <!-- Redes sociales -->
-                    <a class="btn btn-icon" href="#" target="_blank" rel="noopener" aria-label="GitHub">
-                        GitHub
-                    </a>
-                    <a class="btn btn-icon" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        LinkedIn
-                    </a>
-
-                </nav>
-            </nav>
-        </header>
-        
-        <div class="container">
-        <main>
-            <!-- Sección Sobre mí -->
-            <section id="sobre-mi">
-                <div class="sobre-mi-content">
-                    <h1>Nombre del Desarrollador</h1>
-                    <h2>Desarrollador Web Front-End</h2>
-                    <img src="imagenes/foto-perfil.png" alt="Foto de perfil">
-                    <p>Breve descripción profesional del desarrollador ficticio.</p>
-                </div>
-            </section>
-
-            <!-- Sección Habilidades -->
-            <section id="habilidades">
-                <h2>Habilidades y Herramientas</h2>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>Bootstrap</li>ñ
-                    <li>Git/GitHub</li>
-                </ul>
-            </section>
-
-            <!-- Sección Experiencia -->
-            <section id="experiencia">
-                <h2>Experiencia Laboral</h2>
-                <article>
-                    <h3>Desarrollador Web - Empresa A</h3>
-                    <p>Descripción breve de la experiencia laboral en Empresa A.</p>
-                </article>
-                <article>
-                    <h3>Desarrollador Front-End - Empresa B</h3>
-                    <p>Descripción breve de la experiencia laboral en Empresa B.</p>
-                </article>
-            </section>
-
-            <!-- Sección Proyectos -->
-            <section id="proyectos">
-                <h2>Proyectos Realizados</h2>
-                <article>
-                    <h3>Proyecto 1</h3>
-                    <p>Descripción breve del proyecto 1.</p>
-                </article>
-                <article>
-                    <h3>Proyecto 2</h3>
-                    <p>Descripción breve del proyecto 2.</p>
-                </article>
-            </section>
-
-            <!-- Sección Contacto -->
-            <section id="contacto">
-                <h2>Contacto</h2>
-                <form>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-
-                    <button type="submit">Enviar</button>
-                </form>
-                <div class="redes">
-                    <a href="#" target="_blank">LinkedIn</a>
-                    <a href="#" target="_blank">GitHub</a>
-                </div>
-            </section>
-        </main>
+    <!-- SOBRE MI -->
+    <section id="sobre-mi">
+        <div class="sobre-mi-content">
+            <h1>Nombre del Desarrollador</h1>
+            <h2>Desarrollador Web Front-End</h2>
+            <img src="imagenes/foto-perfil.png" alt="Foto de perfil">
+            <p>Breve descripción profesional del desarrollador ficticio.</p>
         </div>
-        <footer>
-            <p>&copy; 2026 Portfolio Profesional</p>
-        </footer>
-    </body>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades">
+        <h2>Habilidades y Herramientas</h2>
+        <div class="skills-container">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Bootstrap</div>
+            <div class="skill">Git/GitHub</div>
+            <div class="skill">Python</div>
+        <h3>Otras habilidades:</h3>
+        <div class="skills-container">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Bootstrap</div>
+            <div class="skill">Git/GitHub</div>
+            <div class="skill">Python</div>
+
+        </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section id="experiencia">
+        <h2>Experiencia Laboral</h2>
+
+        <div class="grid">
+            <!--primer card-->
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="role">Frontend Developer</div>
+                    <div class="company">Acme Corp</div>
+                </div>
+                <p class="description">
+                    Desarrollé interfaces modernas y optimizadas.
+                </p>
+                <a class="link-btn" href="#">Visitar empresa</a>
+                <div class="card-footer">
+                    <span class="date-range">2022</span>
+                    <span class="date-dot"></span>
+                    <span class="date-range">2023</span>
+                    <span class="duration">1 año</span>
+                </div>
+            </div>
+            <!--segundo card-->
+            <div class="card">
+                <div class="card-header">
+                    <div class="role">UI/UX Developer</div>
+                    <div class="company">Studio Nova</div>
+                </div>
+                <p class="description">
+                    Diseño de interfaces y experiencia de usuario.
+                </p>
+                <a class="link-btn" href="#">Visitar empresa</a>
+                <div class="card-footer">
+                    <span class="date-range">2021</span>
+                    <span class="date-dot"></span>
+                    <span class="date-range">2022</span>
+                    <span class="duration">1 año</span>
+                </div>
+            </div>
+            <!--tercer card-->
+            <div class="card">
+                <div class="card-header">
+                    <div class="role">UI/UX Developer</div>
+                    <div class="company">Studio Nova</div>
+                </div>
+                <p class="description">
+                    Diseño de interfaces y experiencia de usuario.
+                </p>
+                <a class="link-btn" href="#">Visitar empresa</a>
+                <div class="card-footer">
+                    <span class="date-range">2021</span>
+                    <span class="date-dot"></span>
+                    <span class="date-range">2022</span>
+                    <span class="duration">1 año</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+        <h2>Proyectos Realizados</h2>
+
+<div class="grid">
+            <!--primer card-->
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="role">Titulo Proyecto</div>
+                    <div class="company">herramienta 1 • herramienta 2 • herramienta 3</div>
+                </div>
+                <p class="description">
+                    Desarrollé interfaces modernas y optimizadas.
+                </p>
+                <a class="link-btn" href="#">Ver proyecto</a>
+                <div class="card-footer">
+ 
+                </div>
+            </div>
+            <!--segundo card-->
+            <div class="card">
+                <div class="card-header">
+                    <div class="role">Titulo Proyecto</div>
+                    <div class="company">herramienta 1 • herramienta 2 • herramienta 3</div>
+                </div>
+                <p class="description">
+                    Diseño de interfaces y experiencia de usuario.
+                </p>
+                <a class="link-btn" href="#">Ver proyecto</a>
+                <div class="card-footer">
+
+                </div>
+            </div>
+            <!--tercer card-->
+            <div class="card">
+                <div class="card-header">
+                    <div class="role">Titulo Proyecto</div>
+                    <div class="company">herramienta 1 • herramienta 2 • herramienta 3</div>
+                </div>
+                <p class="description">
+                    Diseño de interfaces y experiencia de usuario.
+                </p>
+                <a class="link-btn" href="#">Ver Proyecto</a>
+                <div class="card-footer">
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+
+        <form>
+            <label>Nombre:</label>
+            <input type="text" required>
+
+            <label>Email:</label>
+            <input type="email" required>
+
+            <label>Mensaje:</label>
+            <textarea required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="redes">
+            <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+            <a href="https://github.com/">GitHub</a>
+        </div>
+    </section>
+
+</main>
+</div>
+<!--Fin del contenedor-->
+
+<footer>
+    <p>&copy; 2026 Portfolio Profesional</p>
+</footer>
+
+</body>
 </html>

@@ -1,274 +1,356 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+
+/* RESET GLOBAL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* ───────── VARIABLES ───────── */
+:root { /*definir variables de color y estilo*/ 
+  --bg: #0d0e12; /*color principal*/
+  --card: #13141a;  /*color de fondo de las tarjetas*/
+  --border: rgba(124, 112, 112, 0.07); /*color de borde de las tarjetas*/
+  --text: #e2e4ed;  /*color del texto principal*/
+  --muted: #5a5e72; /*color de texto secundario*/
+  --soft: #9098b0; /*color de texto suave*/
+  --accent: #6ee7b7; /*color de acento para botones y detalles*/
+  --accent-dim: rgba(0, 255, 153, 0.1); /*color de fondo para botones de acento*/
+  --radius: 16px; /*redondear de bordes*/
+}
+
+/* ───────── BODY ───────── */
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #a7a7a7;
+  font-family: "DM Sans", sans-serif; /* o Roboto, según lo que quieras */
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 80px 24px; /* combina top para navbar y padding lateral */
+  transition: background 0.3s, color 0.3s;
 }
 
+/* ───────── CONTENEDOR ───────── */
 .container {
-  max-width: 950px;/* ancho máximo del contenido */
-  max-height: 100%;   /*hacer que el contenido ocupe toda la altura disponible*/
-  margin: 80px auto 40px auto;  /* centrado horizontal y espacio arriba/abajo */
-  padding: 20px;                /* espacio interno */
-  border: 3px solid #6ee7b7;    /* color del borde */
-  border-radius: 12px;          /* bordes redondeados */
-  background-color: #474749;    /* color de fondo del contenido */
-  color: #e2e4ed;               /* color del texto */
-  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); /* sombra para destacar el contenido */
+  max-width: 950px; /*ancho máximo del contenedor*/
+  margin: 45px auto 40px auto; /*espacio externo del contenedor*/
+  padding: 20px;/*espacio interno del contenedor*/
+  border: 3px solid var(--accent); /*borde del contenedor*/
+  border-radius: 12px; /*redondear bordes del contenedor*/
+  background-color: #474749; /*color de fondo del contenedor*/
+  box-shadow: 0 4px 15px rgba(0, 49, 26, 0.3); /*sombra para dar profundidad*/
 }
 
-
-/* Barra de navegación fija */
+/* ───────── NAVBAR ───────── */
 nav {
-  position: fixed;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background: rgba(20,21,28,0.85);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 999px;
+  position: fixed; /*fijar el navbar en la parte superior*/
+  top: 14px; /*espacio desde la parte superior*/
+  left: 50%;  /*centrar horizontalmente*/
+  transform: translateX(-50%); 
+  z-index: 100; /*asegurar que el navbar esté por encima de otros elementos*/
+  display: flex; /*usar flexbox para organizar los elementos del navbar*/
+  align-items: center; 
+  gap: 4px; 
+  background: rgba(20, 21, 28, 0.85); 
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px; /*redondear completamente el navbar*/
   padding: 6px 10px;
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  box-shadow: 0 6px 30px rgba(0,0,0,.4);
-  transition: box-shadow .25s, top .25s;
+  backdrop-filter: blur(16px);
 }
 
-/* Efecto al hacer scroll */
-nav.scrolled {
-  top: 8px;
-  box-shadow: 0 8px 36px rgba(0,0,0,.55);
-}
-
-/* Botones y links */
-.btn {
+/* botones */
+.btn {/*estilos para los botones del navbar*/
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   height: 34px;
   padding: 0 13px;
   border-radius: 999px;
-  border: none;
   background: transparent;
   color: #6b6f83;
-  font-family: 'Syne', sans-serif;
-  font-size: .8rem;
-  font-weight: 500;
+  font-size: 0.8rem;
   cursor: pointer;
   text-decoration: none;
-  white-space: nowrap;
-  transition: color .15s, background .15s;
 }
 
-.btn:hover, .btn.active {
-  color: #e2e4ed;
-  background: rgba(128,128,128,.1);
+.btn:hover,
+.btn.active {  /*estilos para el estado hover y activo de los botones*/
+  color: var(--text);
+  background: rgba(128, 128, 128, 0.1);
 }
 
-.btn.active {
-  color: #6ee7b7;
+.btn.active { /*estilos específicos para el botón activo*/
+  color: var(--accent);
 }
 
-/* Botón modo oscuro / claro */
-.btn-icon {
-  width: 64px;
-  height: 34px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-/* Imágenes del tema */
-.btn-icon img {
-  width: 20px;
-  height: 20px;
-  display: block;
-  position: absolute;
-  transition: opacity .2s, transform .25s;
-}
-
-/* Mostrar solo el ícono correspondiente según el tema */
-[data-theme="dark"]  .icon-moon { opacity:1; transform: scale(1); }
-[data-theme="dark"]  .icon-sun  { opacity:0; transform: scale(0.5); }
-
-[data-theme="light"] .icon-sun  { opacity:1; transform: scale(1); }
-[data-theme="light"] .icon-moon { opacity:0; transform: scale(0.5); }
-
-/* Botón Contacto */
-.btn-contact {
-  background: #6ee7b7;
+/* contacto */
+.btn-contact { /*estilos para el botón de contacto en el navbar*/
+  background: var(--accent);
   color: #0b0c10;
   font-weight: 700;
-  transition: filter .15s, transform .15s;
 }
 
-.btn-contact:hover {
-  filter: brightness(1.1);
-  transform: translateY(-1px);
-}
-
-/* Separador entre botones */
-.sep {
+/* separador */
+.sep { /*estilos para el separador entre los botones del navbar*/
   width: 1px;
-  height: 19px;
-  background: rgba(255,255,255,0.08);
-  flex-shrink: 0;
-  margin: 0 2px;
+  height: 18px;
+  background: var(--border);
 }
 
-/* Espacio para contenido debajo de nav */
-body {
-    padding-top: 80px;
+/* botón tema */
+.btn-icon {
+  width: 60px;
+  height: 34px;
+  position: relative;
 }
 
-/* Secciones */
-section {
-    width: 100%;
-    min-height: 100vh;
-    padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-    scroll-margin-top: 80px; /* Para que el scroll no tape contenido */
+.btn-icon img {
+  width: 20px;
+  position: absolute;
 }
 
-/* Contenedor y centrado */
-#sobre-mi {
-  text-align: center;         /* Centra todos los elementos dentro de la sección */
-  padding: 40px 20px;         /* Espacio arriba y abajo */
+/* ───────── SECCIONES ───────── */
+section {  /*estilos para las secciones del portafolio*/
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  scroll-margin-top: 80px;
 }
 
-/* Nombre y especialidad */
-#sobre-mi h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+/* ───────── SOBRE MI ───────── */
+#sobre-mi { 
+  text-align: center;/*centrar contenido nombre*/
 }
 
-#sobre-mi h2 {
-  font-size: 1.5rem;
-  color: #6b6f83;             /* color más suave */
-  margin-bottom: 1rem;
-}
-
-/* Imagen centrada y redondeada */
 #sobre-mi img {
   max-width: 200px;
   border-radius: 50%;
-  display: block;
-  margin: 0 auto 1.5rem auto; /* centrada y espacio abajo */
-  border: 3px solid #6ee7b7;  /* borde visible */
+  margin: 1rem auto;
+  border: 3px solid var(--accent);
 }
 
-/* Descripción centrada */
 #sobre-mi p {
-  max-width: 600px;           /* ancho máximo para mejor lectura */
-  margin: 0 auto;             /* centrado horizontal */
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #e2e4ed;
+  max-width: 600px;
+  margin: auto;
 }
 
-/* Habilidades */
-#habilidades ul {
-    list-style: square;
-    margin-left: 1rem;
+/* ───────── HABILIDADES ───────── */
+#habilidades h2 { /*estilos para el título de la sección de habilidades*/
+  text-align: center; 
+  margin-bottom: 1.5rem;
 }
 
-/* Experiencia y Proyectos */
-article {
-    background-color: #fff;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+.skills-container {
+  display: flex; /*usar flexbox para organizar las habilidades*/
+  flex-wrap: wrap; /*si los elementos no caben en una sola fila, se pasan a la siguiente línea.*/
+  justify-content: center; /*centrar los elementos horizontalmente*/
+  gap: 3rem; /*espacop entre elementos*/
 }
 
-/* Formulario */
+.skill {
+  background: #333; /*color de fondo dentro de cada elemento*/
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px; /*redondear bordes de cada elemento*/
+}
+
+
+
+/* ── GRID ── */
+.grid {
+  display: grid; /*combertir en un grid layout*/
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  /*definir columnas de tamañi frexible*/
+  gap: 20px; /*espacio entre fila y columnas*/
+  max-width: 1100px;
+  margin: 0 auto; /*centrar el grid dentro del contenedor*/
+}
+
+/* ── CARD ── */
+.card {  /*estilos para las tarjetas de proyectos*/
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* accent top line */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 3px; /*Colocar linea fina en parte superior de la caja*/
+  background: var(--accent);
+  border-radius: 0 0 4px 4px;
+  opacity: 0; /*invisible por defecto, se muestra al hacer hover*/
+  transition: opacity 0.3s; 
+}
+
+.card:hover { /*hover alrededor de la tarjeta*/
+  border-color: rgba(110, 231, 183, 0.22);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(110, 231, 183, 0.08);
+  transform: translateY(-4px);
+}
+/* ajustes para modo claro */
+[data-theme="light"] .card:hover {
+  border-color: #05966940;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ── CARD HEADER ── */
+.card-header {
+  margin-bottom: 14px;
+}
+
+.role {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+
+.company {
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── DESCRIPTION ── */
+.description {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--soft);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+/* ── LINK BUTTON ── */
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-family: "Syne", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition:
+    background 0.18s,
+    border-color 0.18s,
+    transform 0.15s;
+  margin-bottom: 20px;
+}
+.link-btn svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+.link-btn:hover {
+  background: rgba(110, 231, 183, 0.18);
+  border-color: rgba(110, 231, 183, 0.35);
+  transform: translateX(2px);
+}
+[data-theme="light"] .link-btn:hover {
+  background: rgba(5, 150, 105, 0.14);
+  border-color: rgba(5, 150, 105, 0.3);
+}
+
+/* ── FOOTER ── */
+.card-footer {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-range {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.date-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+
+.duration {
+  margin-left: auto;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--border);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+
+
+
+/* ───────── FORMULARIO ───────── */
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-form label {
-    margin-top: 0.5rem;
-}
-
-form input, form textarea {
-    padding: 0.5rem;
-    margin-top: 0.2rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+form input,
+form textarea {
+  margin-top: 5px;
+  padding: 8px;
 }
 
 form button {
-    margin-top: 1rem;
-    padding: 0.7rem;
-    border: none;
-    background-color: #333;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
+  margin-top: 10px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
 }
 
-form button:hover {
-    background-color: #555;
-}
-
-/* Redes sociales */
+/* ───────── REDES ───────── */
 .redes a {
-    display: inline-block;
-    margin: 0.5rem;
-    color: #333;
-    text-decoration: none;
+  margin: 10px;
+  text-decoration: none;
 }
 
-.redes a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
+/* ───────── FOOTER ───────── */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
-}
-
-/* Layout responsive */
-@media (min-width: 768px) {
-    #habilidades ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    #habilidades li {
-        flex: 1 1 200px;
-    }
-
-    #experiencia, #proyectos {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    article {
-        flex: 1 1 45%;
-    }
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
 }
