@@ -329,16 +329,28 @@ form {
 
 form input,
 form textarea {
-  margin-top: 5px;
-  padding: 8px;
+  width: 100%;                 /* que ocupen todo el ancho del contenedor */
+  padding: 12px 16px;          /* espacio interno cómodo */
+  border: 1px solid #ccc;      /* borde sutil */
+  border-radius: 12px;         /* bordes redondeados */
+  outline: none;               /* quitar el outline por defecto */
+  transition: all 0.3s ease;   /* animación suave para cambios */
+  font-size: 1rem;
+  background-color: #fffbfb;   /* fondo claro */
 }
 
-form button {
-  margin-top: 10px;
-  padding: 10px;
-  background: #333;
-  color: white;
-  border: none;
+/* Animación al seleccionarse */
+form input:focus,
+form textarea:focus {
+  border-color: var(--accent);          /* cambiar color del borde */
+  box-shadow: 0 0 8px rgba(110, 231, 183, 0.3); /* resplandor sutil */
+  background-color: #ebfff0;         
+}
+.link-btn-lg {
+  font-size: 1rem; /* letra más grande */
+  width: 100%;       /* ocupa el ancho del contenedor padre, igual que lo de arriba */
+  box-sizing: border-box; /* para que padding no rompa el ancho */
+    margin-top: 16px; 
 }
 
 /* ───────── REDES ───────── */
