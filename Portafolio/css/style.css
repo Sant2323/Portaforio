@@ -24,7 +24,7 @@
 
 /* ───────── BODY ───────── */
 body {
-  font-family: "DM Sans", sans-serif; /* o Roboto, según lo que quieras */
+  font-family: "Roboto", sans-serif; 
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;

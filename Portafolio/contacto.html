@@ -1,48 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header>
-    <nav id="nav">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="nav">
         <a class="btn" href="index.html">Volver al Portfolio</a>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<div class="container">
-    <main>
+    <div class="container">
+      <main>
         <section id="contacto">
-            <h2>Contacto</h2>
+          <h2>Contacto</h2>
 
-            <form>
-                <label>Nombre:</label>
-                <input type="text"  placeholder="Nombre"  required />
+          <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLSdfGPI0gIHVtuhp5jHvlOxvVpd34yfJ_mvaSFE1_6PKqRb6Iw/formResponse"
+            method="POST"
+            target="_blank"
+          >
+            <label>Nombre:</label>
+            <input
+              type="text"
+              name="entry.1023246896"
+              placeholder="Nombre"
+              required
+            />
 
+            <label>Email:</label>
+            <input
+              type="email"
+              name="entry.169696127"
+              placeholder="ejemplo@gmail.com"
+              required
+            />
 
-                <label>Email:</label>
-                <input type="email"  placeholder="ejemplo@gmail.com"  required>
+            <label>Mensaje:</label>
+            <textarea
+              name="entry.484120193"
+              placeholder="Escribe tu mensaje aquí..."
+              required
+            ></textarea>
 
-                <label>Mensaje:</label>
-                <textarea  placeholder="Escribe tu mensaje aquí..." required></textarea>
+            <button class="link-btn link-btn-lg" type="submit">Enviar</button>
+          </form>
+          <iframe name="hidden-iframe" style="display: none"></iframe>
 
-                <button class="link-btn link-btn-lg" type="submit">Enviar</button>
-            </form>
-
-            <div class="redes">
-                <a href="https://www.linkedin.com/feed/">LinkedIn</a>
-                <a href="https://github.com/">GitHub</a>
-            </div>
+          <div class="redes">
+            <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+            <a href="https://github.com/">GitHub</a>
+          </div>
         </section>
-    </main>
-</div>
+      </main>
+    </div>
 
-<footer>
-    <p>&copy; 2023 Portfolio Profesional</p>
-</footer>
-
-</body>
+    <footer>
+      <p>&copy; 2023 Portfolio Profesional</p>
+    </footer>
+  </body>
 </html>
